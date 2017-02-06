@@ -26,5 +26,6 @@ More to come (it's pretty straight forward. The example might be useful)
 ## Goals and TODO
 - Add loading compatible text from a string (possibly useful for default configurations)
 - Add single-file release for easy includes
+- Add constructor which allows specifying path rather than hard-coding it
 - Get more sleep
 
