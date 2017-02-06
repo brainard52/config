@@ -6,7 +6,6 @@ I wrote config as a part of a different project. I figured it would be a good id
 ### Config files
 
 There's an example configuration file in src/
-
 Configuration files need to follow a few simple rules:
 
 1. There will always be at least one [section]
@@ -18,6 +17,8 @@ Configuration files need to follow a few simple rules:
 4. You can have an equal sign in the second name of a key=value pair but not the first. ke=y=value is not valid, but key=val=ue is. This could be useful, but I can't think of how.
 
 5. Each [section] must have at least one key=value pair
+
+### Using the class
 
 More to come (it's pretty straight forward. The example might be useful)
 
