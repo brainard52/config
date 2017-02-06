@@ -6,6 +6,7 @@ I wrote config as a part of a different project. I figured it would be a good id
 ### Config files
 
 There's an example configuration file in src/
+
 Configuration files need to follow a few simple rules:
 
 1. There will always be at least one [section]
