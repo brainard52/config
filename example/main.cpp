@@ -3,11 +3,9 @@
 #include "../src/config.hpp"
 
 int main(){
-    config myconfig;
+    config::set("test", "testkey", "testvalue");
 
-    myconfig.set("test", "testkey", "testvalue");
-
-    std::cout << myconfig.query("test", "testkey") << std::endl;
-    myconfig.write();
+    std::cout << config::query("test", "testkey") << std::endl;
+    config::write();
     return 0;
 }

@@ -3,13 +3,6 @@
 
 #include "config.hpp"
 
-config::config(){
-    load();
-}
-
-config::~config(){
-}
-
 int config::load(){
     return load(CONFIG_PATH);
 }
