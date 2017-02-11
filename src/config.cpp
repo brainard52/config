@@ -56,7 +56,7 @@ std::string config::query(std::string section, std::string key) {
 }
 
 
-std::string before_delim(std::string to_search, std::string delim_str){
+std::string config::before_delim(std::string to_search, std::string delim_str){
 if(to_search.find(delim_str) != std::string::npos){
     auto delim = to_search.find(delim_str);
     return to_search.substr(0, delim);
@@ -64,7 +64,7 @@ if(to_search.find(delim_str) != std::string::npos){
 return "";
 }
 
-std::string after_delim(std::string to_search, std::string delim_str){
+std::string config::after_delim(std::string to_search, std::string delim_str){
 if(to_search.find(delim_str) != std::string::npos){
     auto delim = to_search.find(delim_str);
     return to_search.substr(delim+1, to_search.size()+1);
@@ -72,7 +72,7 @@ if(to_search.find(delim_str) != std::string::npos){
 return "";
 }
 
-bool is_valid_resolution(std::string resolution){
+bool config::is_valid_resolution(std::string resolution){
 std::string x = before_delim(resolution, "x");
 std::string y = after_delim(resolution, "x");
 return (!x.empty() 
