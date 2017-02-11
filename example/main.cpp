@@ -5,7 +5,7 @@
 int main(){
     config::set("test", "testkey", "testvalue");
 
-    std::cout << config::query("test", "testkey") << std::endl;
+    std::cout << config::query("test", "testkey") << std::endl << config::query("config", "path") << std::endl;
     config::write();
     return 0;
 }
