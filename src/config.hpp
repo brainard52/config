@@ -25,17 +25,21 @@ namespace{
 }
 
 namespace config{
+    typedef std::string Section;
+    typedef std::string Key;
+
     int load();
-    int load(std::string path);
-    void set(std::string section, std::string key, std::string value);
+    int load(std::string); // TODO: Validate path and pathed file.
+
+    void set(Section section, Key key, std::string value);
     int write();
-    std::string query(std::string section, std::string key);
+    std::string query(Section section, Key key);
 
     // Toolbox of useful queries.
     std::string before_delim(std::string to_search, std::string delim_str);
     std::string after_delim(std::string to_search, std::string delim_str);
     bool is_valid_resolution(std::string resolution);
 
-    int get_x(std::string section, std::string key);
-    int get_y(std::string section, std::string key);
+    int get_x(Section section, std::string key);
+    int get_y(Section section, std::string key);
 }

@@ -6,7 +6,7 @@
 
 
 int config::load(){
-    return load(settings["config"]["path"]);
+    return load(query("config", "path"));
 }
 
 int config::load(std::string path){
@@ -37,7 +37,7 @@ void config::set(std::string section, std::string key, std::string value){
 }
 
 int config::write(){
-    config_file.open(settings["config"]["path"], std::fstream::out | std::fstream::trunc);
+    config_file.open(query("config", "path"), std::fstream::out | std::fstream::trunc);
     if(config_file.fail())
         return 1;
     for(auto const& section : settings){
@@ -82,9 +82,8 @@ return (!x.empty()
 }
 
 int config::get_x(std::string section, std::string key){
-    std::cout << key << " " << section << " resolution: " << query(key, section) << std::endl;
-    if(is_valid_resolution(query(key, section))){
-        std::string x = before_delim(query(key, section), "x");
+    if(is_valid_resolution(query(section, key))){
+        std::string x = before_delim(query(section, key), "x");
         std::string::size_type sz;
         return std::stoi(x, &sz);
 
@@ -93,10 +92,8 @@ int config::get_x(std::string section, std::string key){
 }
 
 int config::get_y(std::string section, std::string key){
-    std::cout << key << " " << section << " resolution: " << query(key, section) << std::endl;
     if(is_valid_resolution(query(section, key))){
-        std::string y = after_delim(query(key, section), "x");
-        std::cout << y << std::endl;
+        std::string y = after_delim(query(section, key), "x");
         std::string::size_type sz;
         return std::stoi(y, &sz);
     }
