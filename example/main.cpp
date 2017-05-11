@@ -1,11 +1,12 @@
 #include <iostream>
 
-#include "../src/config.hpp"
+#include "../src/newconfig.hpp"
 
 int main(){
-    config::set("test", "testkey", "testvalue");
+    config Config;
+    Config.set("test", "testkey", "testvalue");
 
-    std::cout << config::query("test", "testkey") << std::endl << config::query("config", "path") << std::endl;
-    config::write();
+    std::cout << Config.query("test", "testkey") << std::endl << Config.query("config", "path") << std::endl;
+    Config.write();
     return 0;
 }
